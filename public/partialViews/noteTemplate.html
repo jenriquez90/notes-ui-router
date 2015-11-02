@@ -1,0 +1,12 @@
+<!-- draggable-zone -->
+<div>
+    <div hover-effect class="note" ng-repeat="note in notes" ng-show="note._id || note._id==0">
+        <input class="btn btn-primary" type="button" value="X" ng-click="deleteNote(note, $event)">
+        <input class="btn btn-primary" type="button" value="Edit"  ui-sref="update({noteID: note._id })" ng-click="editNote(note)">
+        <article>
+            <header>{{note.title}}</header>
+            <p>{{note.content}}</p>
+            <footer>Date edited: {{ note.edited | date: 'medium' }}</footer>
+        </article>
+    </div>
+</div>

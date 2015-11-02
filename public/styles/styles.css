@@ -1,0 +1,214 @@
+header {
+    margin-left: 15px;
+}
+
+div.myModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.noteWindow {
+    background-color: lightgray;
+    opacity: 1;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    border: 0.5em solid black;
+    border-radius: 2%;
+    overflow: auto;
+}
+
+.noteWindow h1 {
+    margin-left: 5%;
+    text-decoration: underline;
+}
+
+.noteWindow label {
+    display: inline-block;
+    width: 10%;
+    margin-left: 5%;
+}
+
+.noteWindow label[for="title"] {
+    font-weight: bold;
+}
+
+.info {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.noteWindow input[type="text"] {
+    width: 75%;
+}
+
+.noteWindow textarea {
+    resize: none;
+    width: 75%;
+    height: 15em;
+    position: relative;
+    left: 15.25%;
+}
+
+.noteWindow input[type="button"]:first-of-type {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}
+
+.noteWindow input[type="button"]:last-of-type {
+    position: absolute;
+    right: 15%;
+    bottom: 1em;
+}
+
+div.note {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    width: 250px;
+    height: 125px;
+    background-color: #F7E98D;
+    background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+    background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+    background: -o-linear-gradient(#F9EFAF, #F7E98D);
+    background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+    background: linear-gradient(#F9EFAF, #F7E98D);
+    position: relative;
+    -webkit-box-shadow: 0 5px 15px #777;
+    -moz-box-shadow: 0 5px 15px #777;
+    box-shadow: 0 5px 15px #777;
+    overflow: auto;
+}
+
+div.note:hover {
+    transform: scale(1.2);
+    transition: transform 0.75s;
+}
+
+div.note header {
+    margin: 0;
+    margin-right: 50px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+div.note article {
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+div.note footer {
+    color: darkgray;
+    font-size: 75%;
+}
+
+div.note input[type="button"]:first-child {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+}
+
+div.note input[type="button"]:last-of-type {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    opacity: 0;
+}
+
+div.note:hover input[type="button"] {
+    opacity: 1;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -ms-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+/* Login CSS */
+
+#loginBody {
+    background-color: black;
+}
+
+#loginBody #wrapper {
+    background: url("../images/loginBg.jpg") no-repeat;
+    -webkit-background-size: contain;
+    background-size: cover;
+    background-position: center center;
+}
+
+#loginBody div.myModal {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#loginForm {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    text-align: center;
+}
+
+#loginForm input {
+    width: 50%;
+    font-size: 1.5em;
+    border: 1px solid white;
+}
+
+#loginForm input[type="text"], input[type="password"] {
+    background-color: transparent;
+    text-indent: 1em;
+    margin-bottom: 0.25em;
+    color: white;
+    border-radius: 0.1em;
+}
+
+#loginForm input[type="submit"] {
+    margin-top: 0.25em;
+    border-radius: 0.2em;
+    background-color: rgb(118, 166, 93);
+    background: linear-gradient(top, rgb(81,143,67), rgb(168,200,127));
+}
+
+#loginForm input[type="submit"]:hover {
+    background-color: rgb(220,55,86);
+    background: linear-gradient(top, rgb(215,40,67), rgb(220,64,97));
+}
+
+div[draggable-zone] {
+    /*position: relative;
+    */border: 2px solid black;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 0.5em;
+    height: 700px;
+}

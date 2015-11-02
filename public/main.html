@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Notes: {{ currentUser }}</title>
+    <link href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles/styles.css" rel="stylesheet">
+    <script src="../scripts/angular.js"></script>
+    <script src="../scripts/angular-resource.js"></script>
+    <script src="../scripts/angular-ui-router.js"></script>
+    <script src="../scripts/components/services/notes.service.js"></script>
+    <script src="../scripts/notesApp.js"></script>
+    <script src="../scripts/components/notes/notes.js"></script>
+    <script src="../scripts/components/directives/draggableZone.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="navbar-nav">
+        <h1 class="navbar-brand">
+            Welcome to Notes.not, {{ currentUser }}
+        </h1>
+        <ol class="nav navbar-nav">
+            <li>
+                <a ng-click="loadAllNotes()" ui-sref="all" href="#">View</a>
+            </li>
+            <li>
+                <a ui-sref="create">Create</a>
+            </li>
+        </ol>
+        <a></a>
+    </div>
+</nav>
+
+<div ui-view class="container slide" style="padding-top: 80px;"></div>
+
+<!--ng-include src="'../partialViews/noteTemplate.html'"></ng-include!-->
+<!--ng-include src="'../partialViews/noteModal.html'"></ng-include!-->
+
+</body>
+</html>

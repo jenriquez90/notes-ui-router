@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Notes Login</title>
+    <link href="../styles/styles.css" rel="stylesheet">
+    <style>
+        html, body, #wrapper {
+            height: 100%;
+        }
+    </style>
+</head>
+<body id="loginBody">
+<div id="wrapper">
+    <div class="myModal">
+        <form  method="post" action="/notes" id="loginForm">
+            <input name="username" autocomplete="off" placeholder="Username" type="text">
+            <input name="password" autocomplete="off" placeholder="Password" type="password">
+            <input type="submit" value="login">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div>
+    <form name="noteForm" class="noteWindow">
+        <h1 id="noteHeader">{{ modalMode }} Note</h1>
+        <span class="info">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" required="required" placeholder="Title goes here..." ng-model="selectedNote.title"></span>
+        <span class="info">
+            <label for="created">Created</label>
+            <input id="created" type="text" readonly="readonly" value="{{ selectedNote.created | date: 'medium' }}"></span>
+        <span class="info">
+            <label for="modified">Modified</label>
+            <input id="modified" type="text" readonly="readonly" value="{{ selectedNote.edited | date: 'medium' }}"></span>
+        <textarea ng-model="selectedNote.content" name="content" required="required" placeholder="Enter note..."></textarea>
+
+        <input type="button" class="btn btn-primary" value="{{ modalMode }}" ui-sref="all" ng-click="createNote(selectedNote, noteForm)">
+        <input type="button" class="btn btn-primary" value="Cancel" ui-sref="all" ng-click="cancelEdit(null, noteForm)">
+
+        <div class="alert alert-danger" ng-hide="noteForm.$valid || noteForm.$pristine">
+            <ul>
+                <li ng-hide="noteForm.title.$valid">
+                    You must enter a title.
+                </li>
+                <li ng-hide="noteForm.content.$valid">
+                    You must enter some content.
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
