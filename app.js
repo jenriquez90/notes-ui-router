@@ -101,7 +101,7 @@ function getNotes(req, res) {
     } else {
         res.redirect("/login");
     }
-}node
+}
 
 app.post('/main/:username/notes/:noteID', saveNote);
 
@@ -110,6 +110,8 @@ function saveNote(req, res) {
         var userID = req.session.username;
         var noteID = Number(req.params.noteID);
         // Update a note
+
+        //console.log(req.body, req.files);
 
         req.body.edited = new Date().toJSON();
 
@@ -137,8 +139,8 @@ function createNote(req, res) {
 
             console.log(err);
 
-            if(obj === null)
-            obj = {maximum: 0};
+            if (obj === null)
+                obj = {maximum: 0};
 
             var note = getNote(req.body);
             note._id = obj.maximum + 1;
@@ -176,11 +178,11 @@ function logMongo(err, obj) {
     if (err) {
         console.warn(err.message);
     } else {
-        console.dir(obj);
+        //console.dir(obj);
     }
 }
 
-function getNote(data){
+function getNote(data) {
     return {
         _id: data._id,
         title: data.title,
@@ -189,3 +191,23 @@ function getNote(data){
         edited: data.edited
     }
 }
+/*
+app.post('/uploadImage', addImage);
+
+function addImage(req, res) {
+    var userID = req.session.username;
+
+    console.log(req.body, req.files);
+
+    if (userID) {
+        // Update a note
+
+        //console.log(req.body);
+
+        // Notes.findOneAndUpdate({_id: userID},
+        //   {$set: {"notes.images": req.body.image}}, logMongo);
+    }
+    else {
+        res.redirect("/login");
+    }
+}*/
